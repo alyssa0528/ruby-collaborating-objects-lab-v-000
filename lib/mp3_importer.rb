@@ -19,8 +19,8 @@ class MP3Importer
   #instance method that takes above array of file names and imports them into library 
   def import
     self.files.each do |f|
-      Song.new_by_filename(f)
-      Artist.new 
+      song = Song.new_by_filename(f)
+      Artist.all << song 
     end 
   end 
 end 
