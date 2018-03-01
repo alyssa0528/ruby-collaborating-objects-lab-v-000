@@ -2,16 +2,9 @@ require 'pry'
 class Song 
   attr_accessor :name, :artist
   
-  #keep all song instances here
-  @@all = []
-  
   #initialize every song instance with a name 
   def initialize(name)
     @name = name
-  end 
-  
-  def self.all
-    @@all
   end 
   
   #Class method that takes a file, parses filename info, and creates a new song instance with that filename 
