@@ -25,7 +25,7 @@ class Song
       artist = file.split(" - ")[0] #splits file at dashes, takes the first index (artist)
       song = file.split(" - ")[1] #takes second index
       new_song = self.new(song) #initialize with song from line 21
-      new_artist = 
+      new_artist = Artist.find_or_create_by_name(artist)
       new_song.artist_name = artist
       new_song.save
   end 
