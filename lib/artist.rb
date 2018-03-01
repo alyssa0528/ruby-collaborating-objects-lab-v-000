@@ -40,14 +40,7 @@ class Artist
   
   #class method that loops through @@all to find a particular artist. If artist is detected in @@all, return that artist's name. Else create a new artist instance. 
   def self.find_or_create_by_name(name)
-    if self.find(name)
-      self.find(name)
-    else 
-      self.create(name)
-        #self.all.detect do |artist|
-      #if artist.name != name 
-       # self.new(name) 
-    end
+    self.all.detect {|artist| artist.name == name} || self.new(name)
   end
 
   #instance method that lists all of an artist's songs 
