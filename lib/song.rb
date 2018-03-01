@@ -27,7 +27,8 @@ class Song
       new_song = self.new(song) #initialize with song from line 21
       new_artist = Artist.find_or_create_by_name(artist)
       new_song.artist = artist
-      new_song.save
+      artist.add_song
+      song
   end 
   
   def artist_name=(name)
