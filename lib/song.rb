@@ -14,11 +14,6 @@ class Song
     @@all
   end 
   
-  def save
-    @@all << self 
-    self
-  end 
-  
   #Class method that takes a file, parses filename info, and creates a new song instance with that filename 
 
   def self.new_by_filename(file) 
