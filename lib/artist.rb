@@ -28,16 +28,6 @@ class Artist
     @@all << self
   end
   
-  def self.find(name)
-    self.all.detect do |artist|
-      artist.name == name 
-    end
-  end 
-  
-  def self.create(name)
-    self.new(name).tap {|artist| artist.save}
-  end 
-  
   #class method that loops through @@all to find a particular artist. If artist is detected in @@all, return that artist's name. Else create a new artist instance. 
   def self.find_or_create_by_name(name)
     self.all.detect {|artist| artist.name == name} || self.new(name)
