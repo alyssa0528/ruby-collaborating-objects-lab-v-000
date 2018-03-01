@@ -22,9 +22,10 @@ class Song
   #Class method that takes a file, parses filename info, and creates a new song instance with that filename 
 
   def self.new_by_filename(file) 
+      split_file = file.split(" - ")
       artist = file.split(" - ")[0] #splits file at dashes, takes the first index (artist)
       song = file.split(" - ")[1] #takes second index
-      new_song = self.new(song) #initialize with song from line 21
+      song = self.new(split_file[1]) #initialize with song from line 21
       new_song.artist_name = artist
       new_song.save
   end 
