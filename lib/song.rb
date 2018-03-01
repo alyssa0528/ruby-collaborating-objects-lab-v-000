@@ -26,6 +26,7 @@ class Song
       song = self.new(split_file[1]) #initialize with song from line 21
       artist = Artist.find_or_create_by_name(split_file[0])
       song.artist = artist
-      new_song.save
+      artist.add_song(song)
+      song 
   end 
 end 
