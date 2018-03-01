@@ -20,7 +20,7 @@ class MP3Importer
   def import
     self.files.each do |f|
       song = Song.new_by_filename(f)
-      Artist.all << song 
+      Artist.all << song unless Artist.all.include?(song.artist)
     end 
   end 
 end 
